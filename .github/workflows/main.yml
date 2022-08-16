@@ -19,7 +19,7 @@ jobs:
       - name: Log in to Github Packages
         run: echo ${GITHUB_TOKEN} | docker login https://ghcr.io -u ${GITHUB_ACTOR} --password-stdin 
         env:
-          GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_SECRET }}
       - name: Pull image
         run: |
           docker pull ${{ env.IMAGE }}:latest || true
